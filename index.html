@@ -1,6 +1,3 @@
-Here is the code for your invitation file. Copy everything in the box below:
-
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -195,7 +192,7 @@ Here is the code for your invitation file. Copy everything in the box below:
 
     .person-name {
       font-family: 'Great Vibes', cursive;
-      font-size: 38px;
+      font-size: 34px;
       color: var(--maroon-deep);
       line-height: 1.2;
       font-weight: bold;
@@ -231,11 +228,9 @@ Here is the code for your invitation file. Copy everything in the box below:
       line-height: 1.4;
     }
 
-    .date-badge {
-      border-top: 1px solid var(--gold-primary);
-      border-bottom: 1px solid var(--gold-primary);
-      padding: 8px 0;
-      margin-bottom: 10px;
+    /* Date styling without outer lines */
+    .date-group {
+      margin-bottom: 12px;
     }
 
     .event-title {
@@ -243,6 +238,7 @@ Here is the code for your invitation file. Copy everything in the box below:
       font-size: 11px;
       font-weight: 700;
       color: var(--maroon-deep);
+      letter-spacing: 1px;
     }
 
     .event-date {
@@ -300,16 +296,18 @@ Here is the code for your invitation file. Copy everything in the box below:
       position: relative;
     }
 
+    /* Couple Shadow Watermark Background Logo */
     .watermark-logo {
       position: absolute;
-      font-family: 'Great Vibes', cursive;
-      font-size: 140px;
-      color: rgba(212, 175, 55, 0.12);
+      width: 240px;
+      height: 320px;
+      opacity: 0.12;
       pointer-events: none;
       user-select: none;
       z-index: 0;
-      text-align: center;
-      line-height: 1;
+      filter: grayscale(100%) contrast(200%);
+      object-fit: cover;
+      border-radius: 50%;
     }
 
     .venue-card-btn {
@@ -548,12 +546,12 @@ Here is the code for your invitation file. Copy everything in the box below:
                 Cordially invite you to celebrate their wedding
               </div>
 
-              <div class="date-badge">
+              <div class="date-group">
                 <div class="event-title">RECEPTION</div>
                 <div class="event-date">12.12.2026</div>
               </div>
 
-              <div class="date-badge">
+              <div class="date-group">
                 <div class="event-title">MARRIAGE</div>
                 <div class="event-date">13.12.2026</div>
               </div>
@@ -579,7 +577,8 @@ Here is the code for your invitation file. Copy everything in the box below:
         <div class="page-title">Wedding Venue</div>
 
         <div class="venue-container">
-          <div class="watermark-logo">A & Y</div>
+          <!-- Couple Shadow Watermark Background Logo -->
+          <img src="IMG_0270.PNG" class="watermark-logo" alt="Watermark" />
 
           <button class="venue-card-btn" onclick="openVenueModal()">
             <span>📍</span>
@@ -682,7 +681,6 @@ Here is the code for your invitation file. Copy everything in the box below:
       document.getElementById('venueModal').classList.remove('active');
     }
 
-    // Countdown Timer logic targeting Marriage date
     const targetDate = new Date('December 13, 2026 00:00:00').getTime();
 
     function updateCountdown() {
@@ -707,7 +705,3 @@ Here is the code for your invitation file. Copy everything in the box below:
   </script>
 </body>
 </html>
-
-```
-
-Paste this into the editor page on GitHub and click **Commit changes...**.
